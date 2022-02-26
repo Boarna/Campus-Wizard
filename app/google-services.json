@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "369300345363",
+    "project_id": "the-campus-wizard",
+    "storage_bucket": "the-campus-wizard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369300345363:android:653224bdc42eaad5afa5e6",
+        "android_client_info": {
+          "package_name": "com.example.thecampuswizard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369300345363-dj5qofincsgnrmq52gl88j2sgvd7uo3v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMRNFNh3nZvs85JAuVujkKWZZfa8_Gzmk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369300345363-dj5qofincsgnrmq52gl88j2sgvd7uo3v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
