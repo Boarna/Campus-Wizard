@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/text_white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".activities.StudentDashboard">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/navDashboard">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingEnd="16dp">
+
+                <Button
+                    android:id="@+id/dashboardTimetableBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="156dp"
+                    android:paddingVertical="18dp"
+                    android:layout_marginEnd="24dp"
+                    app:cornerRadius="16dp"
+                    android:drawableBottom="@drawable/timetable"
+                    android:fontFamily="@font/archivo_black"
+                    android:text="Timetable"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_white"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/style_purple" />
+
+                <Button
+                    android:id="@+id/dashboardModulesBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="140dp"
+                    android:layout_marginEnd="24dp"
+                    android:drawableBottom="@drawable/library"
+                    android:fontFamily="@font/archivo_black"
+                    android:paddingVertical="18dp"
+                    android:text="Modules"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_white"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/style_purple"
+                    app:cornerRadius="16dp" />
+
+                <Button
+                    android:id="@+id/dashboardLibraryBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="156dp"
+                    android:paddingVertical="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="24dp"
+                    app:cornerRadius="16dp"
+                    android:drawableBottom="@drawable/timetable"
+                    android:fontFamily="@font/archivo_black"
+                    android:text="Library"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_white"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/style_purple" />
+
+
+                <Button
+                    android:id="@+id/dashboardForumBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawableTop="@drawable/ic_outline_forum_24"
+                    android:fontFamily="@font/archivo_black"
+                    android:text="Forum"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_white"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/style_blue" />
+
+                <Button
+                    android:id="@+id/dashboardAcademicProfileBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawableTop="@drawable/ic_outline_nature_people_24"
+                    android:fontFamily="@font/archivo_black"
+                    android:text="Academic Prfoile"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_white"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/style_blue" />
+
+                <Button
+                    android:id="@+id/dashboardStudentActivitiesBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawableTop="@drawable/ic_outline_groups_24"
+                    android:fontFamily="@font/archivo_black"
+                    android:text="Student Activities"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_white"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/style_blue" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <LinearLayout
+            android:id="@+id/navDashboard"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:srcCompat="@drawable/profile_pic" />
+
+                <TextView
+                    android:id="@+id/dTextWelcome"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/archivo_black"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:srcCompat="@drawable/logo" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

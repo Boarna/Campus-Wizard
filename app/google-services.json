@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:369300345363:android:653224bdc42eaad5afa5e6",
+        "mobilesdk_app_id": "1:369300345363:android:6dde140cf63d93a1afa5e6",
         "android_client_info": {
-          "package_name": "com.example.thecampuswizard"
+          "package_name": "com.example.the_campus_wizard"
         }
       },
       "oauth_client": [
