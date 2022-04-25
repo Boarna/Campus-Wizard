@@ -5,11 +5,282 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/timetableBackBtn"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:background="@color/text_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="18dp"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back_icon" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/text_white">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:background="@color/text_white"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/timetableBackBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="28dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/back_icon" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="28dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/Timetable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/archivo_black"
+                android:text="Timetable"
+                android:textAlignment="center"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/imageView10"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/timetableBackBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="641dp"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".activities.MainActivity">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/archivo_black"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="Sun \n10 \nApr"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:backgroundTint="@color/text_white"
+                app:cornerRadius="24dp"
+                android:clickable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/style_purple"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/archivo_black"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="Mon \n11 \nApr"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:backgroundTint="@color/text_white"
+                app:cornerRadius="24dp"
+                android:clickable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button2"
+                app:strokeColor="@color/style_purple"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:clickable="false"
+                android:fontFamily="@font/archivo_black"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="Tue       Project Management\n12         Cyber Security\nApr       Data Science"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:backgroundTint="@color/style_purple"
+                app:cornerRadius="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button6"
+                app:strokeColor="@color/style_purple"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:clickable="false"
+                android:fontFamily="@font/archivo_black"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="Wed \n13 \nApr"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:backgroundTint="@color/text_white"
+                app:cornerRadius="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button7"
+                app:strokeColor="@color/style_purple"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:clickable="false"
+                android:fontFamily="@font/archivo_black"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="Thu       Dissertation\n14         Data Science\nApr       I.O.E."
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:backgroundTint="@color/style_purple"
+                app:cornerRadius="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button8"
+                app:strokeColor="@color/style_purple"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:clickable="false"
+                android:fontFamily="@font/archivo_black"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="Fri \n15 \nApr"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:backgroundTint="@color/text_white"
+                app:cornerRadius="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button9"
+                app:strokeColor="@color/style_purple"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:clickable="false"
+                android:fontFamily="@font/archivo_black"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="Sat \n16 \nApr"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:backgroundTint="@color/text_white"
+                app:cornerRadius="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button10"
+                app:strokeColor="@color/style_purple"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:clickable="false"
+                android:fontFamily="@font/archivo_black"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="Sun \n17 \nApr"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:backgroundTint="@color/text_white"
+                app:cornerRadius="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button11"
+                app:strokeColor="@color/style_purple"
+                app:strokeWidth="1dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
