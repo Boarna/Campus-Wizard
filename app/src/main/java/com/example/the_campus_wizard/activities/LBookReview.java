@@ -24,6 +24,7 @@ import com.example.the_campus_wizard.holderClasses.Review;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -35,7 +36,6 @@ public class LBookReview extends AppCompatActivity {
     private TextView title;
     private TextView author;
     private TextView edition;
-    private TextView isbn;
     private Button reviewBtn;
     private Button reserveBtn;
     private TextView addReviewText;
@@ -59,13 +59,11 @@ public class LBookReview extends AppCompatActivity {
         title = findViewById(R.id.lBookTitle);
         author = findViewById(R.id.lBookAuthor);
         edition = findViewById(R.id.lBookEdition);
-        isbn = findViewById(R.id.lBookISBN);
         bookIMG = findViewById(R.id.lBookPageImg);
 
         title.setText(getIntent().getStringExtra("title"));
         author.setText(getIntent().getStringExtra("author"));
         edition.setText(getIntent().getStringExtra("edition"));
-        isbn.setText(getIntent().getStringExtra("isbn"));
         reviews_list = new ArrayList<>();
         bookIMG.setImageBitmap(getIntent().getParcelableExtra("img"));
         document_id = getIntent().getStringExtra("document_id");
@@ -80,9 +78,18 @@ public class LBookReview extends AppCompatActivity {
 
         document_id = getIntent().getStringExtra("document_id");
 
-        String first_name = AppSession.Session.userData.get("first_name").toString();
-        String surname = AppSession.Session.userData.get("surname").toString();
-        String user = first_name + " " + surname;
+        String first_name = "";
+        String surname = "";
+        String user = "";
+        try {
+            first_name = AppSession.Session.userData.get("first_name").toString();
+            surname = AppSession.Session.userData.get("surname").toString();
+
+        }catch (Exception e){
+
+        }
+
+        user = first_name + " " + surname;
 
         //Checking for reserved status and creates initial comment list. This ensures comments shown are syncronised with the database.
         db.getInstance().collection("library_book").document(document_id).get().addOnCompleteListener(task -> {
@@ -96,8 +103,7 @@ public class LBookReview extends AppCompatActivity {
                     reserveBtn.setText("Reserve this book");
                 }
 
-                List<Map<Object, String>> reviews;
-                reviews = (List<Map<Object, String>>) task.getResult().get("Reviews");
+                List<Map<Object, String>> reviews = (List<Map<Object, String>>) task.getResult().get("Reviews");
 
                 for (int i = 0; i < reviews.size(); i++) {
 
@@ -106,24 +112,26 @@ public class LBookReview extends AppCompatActivity {
                     reviews_list.add(new Review(name, comment));
                 }
 
-                setAdapter();
+
 
             }
         });
 
         setAdapter();
 
+        String finalUser = user;
         reviewBtn.setOnClickListener(v -> {
 
-            addReview(user);
+            addReview(finalUser);
         });
 
+
         reserveBtn.setOnClickListener(v -> {
-            reserveBook(user);
+            reserveBook(finalUser);
         });
     }
 
-    //Adds review to database, document_id is passed from previous intent in order to identify the selected database document.
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void addReview(String user) {
 

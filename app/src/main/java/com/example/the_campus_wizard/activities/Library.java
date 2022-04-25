@@ -173,6 +173,8 @@ public class Library extends AppCompatActivity {
                                 String finalBookCategory = book_category;
                                 String finalDocument_id = document_id;
 
+                                Log.d("Tsagdsgfsdf", "here");
+
                                 storageRef.getFile(file).addOnSuccessListener(taskSnapshot -> {
                                     Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
 

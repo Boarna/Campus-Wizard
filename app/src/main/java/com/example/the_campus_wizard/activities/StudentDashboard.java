@@ -38,8 +38,18 @@ public class StudentDashboard extends AppCompatActivity {
         modules = findViewById(R.id.dashboardModulesBtn);
         academicProfile = findViewById(R.id.dashboardAcademicProfileBtn);
         studentActivities = findViewById(R.id.dashboardStudentActivitiesBtn);
-        String first_name = Objects.requireNonNull(AppSession.Session.userData.get("first_name")).toString();
+
+        String first_name = "";
+
+        try {
+             first_name = Objects.requireNonNull(AppSession.Session.userData.get("first_name")).toString();
+
+        }catch(Exception e){
+
+        }
+
         dtextview.setText("Welcome " + first_name);
+
 
         Intent TimetableIntent =   Intents.timetableIntent(this);
         Intent LibraryIntent = Intents.libraryIntent(this);
