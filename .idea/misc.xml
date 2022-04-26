@@ -31,10 +31,10 @@
         <entry key="app/src/main/res/layout/activity_topic.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.4515625" />
         <entry key="app/src/main/res/layout/booksale_view.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/cyber_view.xml" value="0.2755208333333333" />
+        <entry key="app/src/main/res/layout/cyber_view.xml" value="0.375" />
         <entry key="app/src/main/res/layout/library_book_view.xml" value="0.2755208333333333" />
         <entry key="app/src/main/res/layout/library_review_view.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/modules_view.xml" value="0.2755208333333333" />
+        <entry key="app/src/main/res/layout/modules_view.xml" value="0.375" />
         <entry key="app/src/main/res/layout/timetable_view.xml" value="0.34739583333333335" />
         <entry key="app/src/main/res/layout/topic_comments_view.xml" value="0.1" />
       </map>
