@@ -6,11 +6,368 @@
     android:layout_height="match_parent"
     tools:context=".activities.StudentActivities">
 
-    <ImageView
-        android:id="@+id/studentActivitesBackBtn"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/back_icon"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="21dp" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:background="@color/text_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="18dp"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/text_white">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:background="@color/text_white"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/studentActivitesBackBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="28dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/back_icon" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="28dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/Timetable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="48dp"
+                android:fontFamily="@font/archivo_black"
+                android:text="Student Activities"
+                android:textAlignment="center"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/imageView10"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/timetableBackBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:background="@color/text_white"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".activities.StudentDashboard">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <TextView
+                android:id="@+id/thisWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/archivo_black"
+                android:text="This Week"
+                android:textColor="@color/style_purple"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thisWeek">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingEnd="20dp">
+
+                    <Button
+                        android:id="@+id/dance"
+                        android:layout_width="100dp"
+                        android:layout_height="132dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="12dp"
+                        android:fontFamily="@font/archivo_black"
+                        android:letterSpacing="0.02"
+                        android:text="Dance Classes \n \nMonday \n17.04.2022 \n19:00-20:00"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="false"
+                        android:clickable="false"
+                        android:textColor="@color/text_black"
+                        android:textSize="10sp"
+                        app:backgroundTint="#ADB7FF"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/coding"
+                        android:layout_width="100dp"
+                        android:layout_height="132dp"
+                        android:layout_marginEnd="12dp"
+                        android:fontFamily="@font/archivo_black"
+                        android:letterSpacing="0.02"
+                        android:text="Coding Marathon \n \nTuesday \n18.04.2022 \n17:00-19:00"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_black"
+                        android:textSize="10sp"
+                        app:backgroundTint="#ADB7FF"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/football"
+                        android:layout_width="100dp"
+                        android:layout_height="132dp"
+                        android:layout_marginEnd="12dp"
+                        android:fontFamily="@font/archivo_black"
+                        android:letterSpacing="0.02"
+                        android:text="Football Cup \n \nWednesday \n19.04.2022 \n17:00-19:00"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="false"
+                        android:clickable="false"
+                        android:textColor="@color/text_black"
+                        android:textSize="10sp"
+                        app:backgroundTint="#ADB7FF"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/night"
+                        android:layout_width="100dp"
+                        android:layout_height="132dp"
+                        android:layout_marginEnd="12dp"
+                        android:fontFamily="@font/archivo_black"
+                        android:letterSpacing="0.02"
+                        android:text="Night Out \n \nThursday \n20.04.2022 \n19:00-Late"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="false"
+                        android:clickable="false"
+                        android:textColor="@color/text_black"
+                        android:textSize="10sp"
+                        app:backgroundTint="#ADB7FF"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/business"
+                        android:layout_width="100dp"
+                        android:layout_height="132dp"
+                        android:layout_marginEnd="12dp"
+                        android:fontFamily="@font/archivo_black"
+                        android:letterSpacing="0.02"
+                        android:text="Business Relations \n \nFriday \n21.04.2022 \n16:00-18:00"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="false"
+                        android:clickable="false"
+                        android:textColor="@color/text_black"
+                        android:textSize="10sp"
+                        app:backgroundTint="#ADB7FF"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/fair"
+                        android:layout_width="100dp"
+                        android:layout_height="132dp"
+                        android:layout_marginEnd="12dp"
+                        android:fontFamily="@font/archivo_black"
+                        android:letterSpacing="0.02"
+                        android:text="Student Fair \n \nSaturday \n22.04.2022 \n09:00-12:00"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="false"
+                        android:clickable="false"
+                        android:textColor="@color/text_black"
+                        android:textSize="10sp"
+                        app:backgroundTint="#ADB7FF"
+                        app:cornerRadius="20dp" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/upcoming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/archivo_black"
+                android:text="Upcoming"
+                android:textColor="@color/style_purple"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
+
+            <Button
+                android:id="@+id/button22"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="How to stay safe online \n \nMonday 17.04.2022 \n18:00 - 19:00"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"
+                app:backgroundTint="@color/text_white"
+                app:cornerRadius="24dp"
+                android:clickable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upcoming"
+                app:strokeColor="#ADB7FF"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/button23"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="Football Championship \n \nMonday 17.05.2022 \n18:00 - 19:00"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"
+                app:backgroundTint="@color/text_white"
+                app:cornerRadius="24dp"
+                android:clickable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button22"
+                app:strokeColor="#ADB7FF"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/button24"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="Mental Health Seminar \n \nTuesday 18.05.2022 \n18:00 - 19:00"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"
+                app:backgroundTint="@color/text_white"
+                app:cornerRadius="24dp"
+                android:clickable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button23"
+                app:strokeColor="#ADB7FF"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/button25"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="How to stay safe on campus \n \nWednesday 19.05.2022 \n18:00 - 19:00"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"
+                app:backgroundTint="@color/text_white"
+                app:cornerRadius="24dp"
+                android:clickable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button24"
+                app:strokeColor="#ADB7FF"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/button26"
+                android:layout_width="370dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:letterSpacing="0.05"
+                android:lineHeight="16dp"
+                android:text="Basketball \n \nFriday 20.05.2022 \n18:00 - 19:00"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/text_black"
+                android:textSize="14sp"
+                app:backgroundTint="@color/text_white"
+                app:cornerRadius="24dp"
+                android:clickable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button25"
+                app:strokeColor="#ADB7FF"
+                app:strokeWidth="1dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

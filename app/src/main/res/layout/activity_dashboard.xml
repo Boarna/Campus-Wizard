@@ -76,7 +76,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="100dp"
-        android:paddingBottom="24dp"
         android:background="@color/text_white"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
@@ -103,7 +102,7 @@
                 android:id="@+id/horizontalScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="24dp"
+                android:paddingVertical="12dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/navDashboard">
 
@@ -116,96 +115,123 @@
 
                     <Button
                         android:id="@+id/dashboardTimetableBtn"
-                        android:layout_width="120dp"
-                        android:layout_height="156dp"
+                        android:layout_width="100dp"
+                        android:layout_height="132dp"
                         android:layout_marginStart="20dp"
-                        android:layout_marginEnd="24dp"
+                        android:layout_marginEnd="12dp"
                         android:drawableBottom="@drawable/timetable"
                         android:fontFamily="@font/archivo_black"
                         android:paddingVertical="18dp"
                         android:text="Timetable"
                         android:textAllCaps="false"
                         android:textColor="@color/text_white"
-                        android:textSize="12sp"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.02"
                         app:backgroundTint="@color/style_purple"
                         app:cornerRadius="20dp" />
 
                     <Button
                         android:id="@+id/dashboardModulesBtn"
-                        android:layout_width="120dp"
-                        android:layout_height="156dp"
-                        android:layout_marginEnd="24dp"
+                        android:layout_width="100dp"
+                        android:layout_height="132dp"
+                        android:layout_marginEnd="12dp"
                         android:drawableBottom="@drawable/library"
                         android:fontFamily="@font/archivo_black"
                         android:paddingVertical="18dp"
                         android:text="Modules"
                         android:textAllCaps="false"
                         android:textColor="@color/text_white"
-                        android:textSize="12sp"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.02"
                         app:backgroundTint="@color/style_purple"
                         app:cornerRadius="20dp" />
 
                     <Button
                         android:id="@+id/dashboardLibraryBtn"
-                        android:layout_width="120dp"
-                        android:layout_height="156dp"
-                        android:layout_marginEnd="24dp"
+                        android:layout_width="100dp"
+                        android:layout_height="132dp"
+                        android:layout_marginEnd="12dp"
                         android:drawableBottom="@drawable/timetable"
                         android:fontFamily="@font/archivo_black"
                         android:paddingVertical="20dp"
                         android:text="Library"
                         android:textAllCaps="false"
                         android:textColor="@color/text_white"
-                        android:textSize="12sp"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.02"
                         app:backgroundTint="@color/style_purple"
                         app:cornerRadius="20dp" />
 
                     <Button
                         android:id="@+id/dashboardAcademicProfileBtn"
-                        android:layout_width="120dp"
-                        android:layout_height="156dp"
-                        android:layout_marginEnd="24dp"
+                        android:layout_width="100dp"
+                        android:layout_height="132dp"
+                        android:layout_marginEnd="12dp"
                         android:drawableBottom="@drawable/academic"
                         android:fontFamily="@font/archivo_black"
                         android:paddingVertical="20dp"
                         android:text="Academic Profile"
                         android:textAllCaps="false"
                         android:textColor="@color/text_white"
-                        android:textSize="12sp"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.02"
                         app:backgroundTint="@color/style_purple"
                         app:cornerRadius="20dp" />
 
                     <Button
                         android:id="@+id/dashboardStudentActivitiesBtn"
-                        android:layout_width="120dp"
-                        android:layout_height="156dp"
-                        android:layout_marginEnd="24dp"
+                        android:layout_width="100dp"
+                        android:layout_height="132dp"
+                        android:layout_marginEnd="12dp"
                         android:drawableBottom="@drawable/activities"
                         android:fontFamily="@font/archivo_black"
                         android:paddingVertical="20dp"
                         android:text="Student Activities"
                         android:textAllCaps="false"
                         android:textColor="@color/text_white"
-                        android:textSize="12sp"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.02"
                         app:backgroundTint="@color/style_purple"
                         app:cornerRadius="20dp" />
 
                     <Button
                         android:id="@+id/dashboardForumBtn"
-                        android:layout_width="120dp"
-                        android:layout_height="156dp"
+                        android:layout_width="100dp"
+                        android:layout_height="132dp"
                         android:drawableBottom="@drawable/forum"
                         android:fontFamily="@font/archivo_black"
                         android:paddingVertical="20dp"
                         android:text="Student Forum"
                         android:textAllCaps="false"
                         android:textColor="@color/text_white"
-                        android:textSize="12sp"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.02"
                         app:backgroundTint="@color/style_purple"
                         app:cornerRadius="20dp" />
 
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <EditText
+                android:id="@+id/searchID"
+                android:layout_width="360dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_field"
+                android:ems="10"
+                android:hint="Search..."
+                android:inputType="textPersonName"
+                android:maxLength="10"
+                android:singleLine="false"
+                android:text=""
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/text_gray"
+                android:textSize="18sp"
+                android:drawableStart="@drawable/search"
+                android:drawablePadding="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -217,7 +243,7 @@
                 android:text="Campus Wizard \nNewsletter"
                 android:textColor="@color/style_purple"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+                app:layout_constraintTop_toBottomOf="@+id/searchID" />
 
             <ImageView
                 android:id="@+id/imageView7"
@@ -239,7 +265,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+                app:layout_constraintTop_toBottomOf="@+id/searchID"
                 app:srcCompat="@drawable/life" />
 
             <TextView

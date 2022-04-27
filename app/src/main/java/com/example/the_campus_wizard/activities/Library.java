@@ -34,9 +34,9 @@ import java.util.Objects;
 public class Library extends AppCompatActivity {
 
     private SearchView librarySearchBar;
-    private Button computing;
-    private Button economics;
-    private Button business;
+    private RadioButton computing;
+    private RadioButton economics;
+    private RadioButton business;
     private FirebaseFirestore db = AppSession.Session.db;
     private RecyclerView recyclerView;
     private ArrayList<LibraryBook> books_list;
@@ -110,6 +110,15 @@ public class Library extends AppCompatActivity {
     private void processListWithFilter(String search) {
 
         books_list.clear();
+         radio_category = "Computing";
+        //Radio buttons checking
+        if (computing.isChecked()) {
+            radio_category = "Computing";
+        } else if (economics.isChecked()) {
+            radio_category = "Economics";
+        } else if (business.isChecked()) {
+            radio_category = "Business";
+        }
 
         String finalRadio_category = radio_category;
 

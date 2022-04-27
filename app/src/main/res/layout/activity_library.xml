@@ -100,7 +100,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline15"
             app:layout_constraintTop_toBottomOf="@+id/librarySearchBar">
 
-            <Button
+            <RadioButton
                 android:id="@+id/businessR"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -113,7 +113,7 @@
                 app:layout_constraintStart_toStartOf="@+id/guideline15"
                 app:layout_constraintTop_toBottomOf="@+id/librarySearchBar" />
 
-            <Button
+            <RadioButton
                 android:id="@+id/computingR"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -129,7 +129,7 @@
                 app:layout_constraintStart_toEndOf="@+id/businessR"
                 app:layout_constraintTop_toBottomOf="@+id/librarySearchBar" />
 
-            <Button
+            <RadioButton
                 android:id="@+id/economicsR"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -137,6 +137,48 @@
                 android:layout_weight="2"
                 android:fontFamily="@font/roboto_regular"
                 android:text="Economics"
+                android:textColor="@color/text_white"
+                android:textSize="14sp"
+                app:buttonTint="@color/style_purple"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toBottomOf="@+id/businessR" />
+
+            <RadioButton
+                android:id="@+id/politicsR"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Politics"
+                android:textColor="@color/text_white"
+                android:textSize="14sp"
+                app:buttonTint="@color/style_purple"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toBottomOf="@+id/businessR" />
+
+            <RadioButton
+                android:id="@+id/accountingR"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Accounting"
+                android:textColor="@color/text_white"
+                android:textSize="14sp"
+                app:buttonTint="@color/style_purple"
+                app:layout_constraintStart_toStartOf="@+id/guideline15"
+                app:layout_constraintTop_toBottomOf="@+id/businessR" />
+
+            <RadioButton
+                android:id="@+id/showAllR"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Show All"
                 android:textColor="@color/text_white"
                 android:textSize="14sp"
                 app:buttonTint="@color/style_purple"

@@ -110,14 +110,11 @@ public class LBookReview extends AppCompatActivity {
                     String name = reviews.get(i).get("name");
                     String comment = reviews.get(i).get("comment");
                     reviews_list.add(new Review(name, comment));
+
+                    setAdapter();
                 }
-
-
-
             }
         });
-
-        setAdapter();
 
         String finalUser = user;
         reviewBtn.setOnClickListener(v -> {
@@ -125,10 +122,11 @@ public class LBookReview extends AppCompatActivity {
             addReview(finalUser);
         });
 
-
         reserveBtn.setOnClickListener(v -> {
             reserveBook(finalUser);
         });
+
+
     }
 
 
