@@ -5,16 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
-    android:background="@drawable/input_field">
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="24dp"
+    android:background="@drawable/comment">
 
     <TextView
         android:id="@+id/lViewName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:fontFamily="@font/roboto_regular"
+        android:fontFamily="@font/anton"
         android:text=""
         android:textColor="@color/text_black"
         android:textSize="18sp"
@@ -26,9 +27,7 @@
         android:id="@+id/lViewText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/roboto_regular"
         android:text=""

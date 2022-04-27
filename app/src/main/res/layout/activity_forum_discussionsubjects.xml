@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_white">
+    android:background="@color/text_white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -30,40 +30,29 @@
             android:id="@+id/forumSubjectsBackBtn"
             android:layout_width="50dp"
             android:layout_height="40dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            app:srcCompat="@drawable/back_icon"
             tools:ignore="VectorDrawableCompat" />
-
-        <TextView
-            android:id="@+id/textView32"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/open_sans_bold"
-            android:text="Forum"
-            android:textColor="@color/text_white"
-            android:textSize="60sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline25"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline24"
-            app:layout_constraintTop_toBottomOf="@+id/forumSubjectsBackBtn" />
 
         <TextView
             android:id="@+id/forumSubjectsTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/montserrat_bold"
             android:gravity="center_vertical"
             android:textAllCaps="true"
-            android:textColor="@color/style_purple"
+            android:textColor="@color/text_black"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline25"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline24"
-            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+            app:layout_constraintTop_toBottomOf="@+id/forumSubjectsBackBtn" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/forumDisListRecyclerView"
