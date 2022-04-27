@@ -20,7 +20,7 @@
         <entry key="app/src/main/res/layout/activity_floor_plan.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_forum.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_forum_discussionsubjects.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_lbook_review.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_lbook_review.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_library.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
@@ -37,7 +37,7 @@
         <entry key="app/src/main/res/layout/booksale_view.xml" value="0.1" />
         <entry key="app/src/main/res/layout/cyber_view.xml" value="0.375" />
         <entry key="app/src/main/res/layout/library_book_view.xml" value="0.2755208333333333" />
-        <entry key="app/src/main/res/layout/library_review_view.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/library_review_view.xml" value="0.375" />
         <entry key="app/src/main/res/layout/modules_view.xml" value="0.375" />
         <entry key="app/src/main/res/layout/timetable_view.xml" value="0.34739583333333335" />
         <entry key="app/src/main/res/layout/topic_comments_view.xml" value="0.1" />

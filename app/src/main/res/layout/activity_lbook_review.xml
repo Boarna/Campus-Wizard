@@ -5,12 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_white">
+    android:background="@color/text_white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/background_white"
+        android:background="@color/text_white"
         tools:context=".activities.LBookReview">
 
         <androidx.constraintlayout.widget.Guideline
@@ -31,14 +31,14 @@
             android:id="@+id/lBookBackBtn"
             android:layout_width="50dp"
             android:layout_height="40dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="339dp"
-            android:layout_marginRight="339dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            app:srcCompat="@drawable/back_icon"
             tools:ignore="VectorDrawableCompat" />
 
         <ImageView
@@ -55,11 +55,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/roboto_regular"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/anton"
             android:text=""
-            android:textColor="@color/text_white"
+            android:textColor="@color/text_black"
             android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline18"
             app:layout_constraintStart_toEndOf="@+id/lBookPageImg"
@@ -70,11 +69,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_regular"
             android:text=""
-            android:textColor="@color/text_white"
+            android:textColor="@color/text_black"
             android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline18"
             app:layout_constraintHorizontal_bias="0.497"
@@ -86,73 +83,48 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_regular"
             android:text=""
-            android:textColor="@color/text_white"
+            android:textColor="@color/text_black"
             android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline18"
             app:layout_constraintHorizontal_bias="0.561"
             app:layout_constraintStart_toEndOf="@+id/lBookPageImg"
             app:layout_constraintTop_toBottomOf="@+id/lBookAuthor" />
 
-        <TextView
-            android:id="@+id/lBookISBN"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text=""
-            android:textColor="@color/text_white"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline18"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/lBookPageImg"
-            app:layout_constraintTop_toBottomOf="@+id/lBookEdition" />
-
         <Button
             android:id="@+id/lBookReserveBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Reserve this book"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:letterSpacing="0.05"
+            android:paddingVertical="10dp"
+            android:text="Reserve Book"
             android:textAllCaps="false"
-            android:textColor="@color/text_black"
-            android:textSize="20sp"
-            app:backgroundTint="#F2C19D"
+            android:textColor="@color/text_white"
+            android:textSize="12sp"
+            app:backgroundTint="@color/style_purple"
+            app:cornerRadius="24dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline18"
-            app:layout_constraintStart_toStartOf="@+id/guideline17"
-            app:layout_constraintTop_toBottomOf="@+id/lBookISBN"
-            app:strokeColor="@color/text_white"
-            app:strokeWidth="2dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView29"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Have you read this book? Add a review."
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="Reviews"
             android:textColor="@color/style_purple"
             android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline18"
-            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="@+id/guideline17"
-            app:layout_constraintTop_toBottomOf="@+id/lBookReserveBtn" />
+            app:layout_constraintTop_toBottomOf="@+id/lBookPageImg" />
 
         <EditText
             android:id="@+id/lReviewField"
-            android:layout_width="0dp"
+            android:layout_width="363dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:background="@drawable/input_field"
             android:fontFamily="@font/roboto_regular"
             android:hint="Add review here..."
@@ -162,50 +134,26 @@
             android:textColor="@color/text_black"
             android:textColorHint="@color/text_gray"
             android:textSize="24sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline18"
-            app:layout_constraintStart_toStartOf="@+id/guideline17"
-            app:layout_constraintTop_toBottomOf="@+id/textView29" />
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="452dp" />
 
         <Button
             android:id="@+id/lReviewBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Submit"
-            android:textAllCaps="false"
-            android:textColor="@color/text_black"
-            android:textSize="20sp"
-            app:backgroundTint="#F2C19D"
-            app:layout_constraintEnd_toStartOf="@+id/guideline18"
-            app:layout_constraintStart_toStartOf="@+id/guideline17"
-            app:layout_constraintTop_toBottomOf="@+id/lReviewField"
-            app:strokeColor="@color/text_white"
-            app:strokeWidth="2dp" />
-
-        <TextView
-            android:id="@+id/textView30"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Reviews from other people"
-            android:textColor="@color/text_white"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline18"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline17"
-            app:layout_constraintTop_toBottomOf="@+id/lReviewBtn" />
+            app:elevation="0dp"
+            android:drawableLeft="@drawable/send"
+            tools:layout_editor_absoluteX="307dp"
+            tools:layout_editor_absoluteY="452dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/lRevRecyclerView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline18"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="@+id/guideline17"
-            app:layout_constraintTop_toBottomOf="@+id/textView30" />
+            app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
