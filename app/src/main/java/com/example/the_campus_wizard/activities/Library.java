@@ -166,8 +166,6 @@ public class Library extends AppCompatActivity {
                                 document_id = result.getId();
                                 image = Objects.requireNonNull(result.get("Image")).toString();
 
-                                Log.d("taggggg", image.toString());
-
                                 //Creating a temporary file to store firebase storage image for immediate use in the adaptors and to be passed to the review Activity.
                                 try {
 
