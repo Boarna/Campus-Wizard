@@ -118,102 +118,107 @@ public class Library extends AppCompatActivity {
             radio_category = "Economics";
         } else if (business.isChecked()) {
             radio_category = "Business";
+        }else{
+            radio_category = "not_applicable";
         }
 
         String finalRadio_category = radio_category;
 
-        db.getInstance().collection("library_book").get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
+        if (finalRadio_category != "not_applicable") {
 
-                String title;
-                String author;
-                String edition;
-                String book_category;
-                String document_id;
-                String image;
-                List<Map<Object, String>> reviews;
+            db.getInstance().collection("library_book").get().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
 
-
-                for (DocumentSnapshot result :
-                        Objects.requireNonNull(task.getResult()).getDocuments()
-                ) {
-
-                    String first_name;
-                    String surname;
-                    String user_name = "";
-
-                    try {
-                        first_name = Objects.requireNonNull(AppSession.Session.userData.get("first_name")).toString();
-                        surname = Objects.requireNonNull(AppSession.Session.userData.get("surname")).toString();
-                        user_name = first_name + " " + surname;
-                    } catch (Exception e) {
-
-                    }
+                    String title;
+                    String author;
+                    String edition;
+                    String book_category;
+                    String document_id;
+                    String image;
+                    List<Map<Object, String>> reviews;
 
 
+                    for (DocumentSnapshot result :
+                            Objects.requireNonNull(task.getResult()).getDocuments()
+                    ) {
 
-                    try {
-                        //Attempts retrieve books reserved by the user or unreserved books. If user is not the person that reserved the book it will not be shown in the list.
-                        if (Objects.requireNonNull(result.get("reservedName")).toString().equals(user_name) || Objects.requireNonNull(result.get("isReserved")).toString().equals("false")) {
+                        String first_name;
+                        String surname;
+                        String user_name = "";
 
-                            title = Objects.requireNonNull(result.get("Title")).toString();
-                            author = Objects.requireNonNull(result.get("Author")).toString();
-                            edition = Objects.requireNonNull(result.get("Edition")).toString();
-                            book_category = Objects.requireNonNull(result.get("Category")).toString();
-                            document_id = result.getId();
-                            image = Objects.requireNonNull(result.get("Image")).toString();
+                        try {
+                            first_name = Objects.requireNonNull(AppSession.Session.userData.get("first_name")).toString();
+                            surname = Objects.requireNonNull(AppSession.Session.userData.get("surname")).toString();
+                            user_name = first_name + " " + surname;
+                        } catch (Exception e) {
 
-                            Log.d("taggggg", image.toString());
+                        }
 
-                            //Creating a temporary file to store firebase storage image for immediate use in the adaptors and to be passed to the review Activity.
-                            try {
 
-                                File file = File.createTempFile(image, "jpg");
+                        try {
+                            //Attempts retrieve books reserved by the user or unreserved books. If user is not the person that reserved the book it will not be shown in the list.
+                            if (Objects.requireNonNull(result.get("reservedName")).toString().equals(user_name) || Objects.requireNonNull(result.get("isReserved")).toString().equals("false")) {
 
+                                title = Objects.requireNonNull(result.get("Title")).toString();
+                                author = Objects.requireNonNull(result.get("Author")).toString();
+                                edition = Objects.requireNonNull(result.get("Edition")).toString();
+                                book_category = Objects.requireNonNull(result.get("Category")).toString();
+                                document_id = result.getId();
+                                image = Objects.requireNonNull(result.get("Image")).toString();
+
+                                Log.d("taggggg", image.toString());
+
+                                //Creating a temporary file to store firebase storage image for immediate use in the adaptors and to be passed to the review Activity.
                                 try {
-                                    storageRef = FirebaseStorage.getInstance().getReference().child("books/" + image + ".jpg");
-                                }catch (Exception e){
 
-                                }
+                                    File file = File.createTempFile(image, "jpg");
 
-                                String finalAuthor = author;
-                                String finalTitle = title;
-                                String finalEdition = edition;
-                                String finalBookCategory = book_category;
-                                String finalDocument_id = document_id;
-
-                                Log.d("Tsagdsgfsdf", "here");
-
-                                storageRef.getFile(file).addOnSuccessListener(taskSnapshot -> {
-                                    Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
-
-                                    if (finalBookCategory.equals(finalRadio_category)) {
-                                        if (finalTitle.contains(search) || search.equals("") || finalAuthor.contains(search) || finalEdition.contains(search)) {
-                                            books_list.add(new LibraryBook(finalAuthor, finalTitle, finalEdition, finalBookCategory, bitmap, finalDocument_id));
-                                        }
+                                    try {
+                                        storageRef = FirebaseStorage.getInstance().getReference().child("books/" + image + ".jpg");
+                                    } catch (Exception e) {
 
                                     }
 
-                                    setAdapter();
-                                    //Passes books_list and populates the recyclerView, not the most efficient way of doing it but due to the nature of asynchronous code and the need to be able to
-                                    //sort based on different criteria I was not able to come with a better solution than to call this everytime the books_list updates. Please note it might become
-                                    //resource intensive on bigger lists.
+                                    String finalAuthor = author;
+                                    String finalTitle = title;
+                                    String finalEdition = edition;
+                                    String finalBookCategory = book_category;
+                                    String finalDocument_id = document_id;
+
+                                    Log.d("Tsagdsgfsdf", "here");
+
+                                    storageRef.getFile(file).addOnSuccessListener(taskSnapshot -> {
+                                        Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+
+                                        if (finalBookCategory.equals(finalRadio_category)) {
+                                            if (finalTitle.contains(search) || search.equals("") || finalAuthor.contains(search) || finalEdition.contains(search)) {
+                                                books_list.add(new LibraryBook(finalAuthor, finalTitle, finalEdition, finalBookCategory, bitmap, finalDocument_id));
+                                            }
+
+                                        }
+
+                                        setAdapter();
+                                        //Passes books_list and populates the recyclerView, not the most efficient way of doing it but due to the nature of asynchronous code and the need to be able to
+                                        //sort based on different criteria I was not able to come with a better solution than to call this everytime the books_list updates. Please note it might become
+                                        //resource intensive on bigger lists.
 
 
-                                });
+                                    });
 
-                            } catch (IOException e) {
-                                e.printStackTrace();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                             }
-                        }
-                    } catch (Exception e) {
+                        } catch (Exception e) {
 
+                        }
                     }
+
                 }
 
-            }
+            });
 
-        });
+        }
 
     }
 
