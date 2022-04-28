@@ -14,14 +14,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.the_campus_wizard.R;
 import com.example.the_campus_wizard.globals.app_data_stores.AppSession;
+import com.example.the_campus_wizard.globals.general_functions.GeneralFunctions;
 import com.example.the_campus_wizard.globals.general_functions.Intents;
 import com.example.the_campus_wizard.holderClasses.Student;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import com.example.the_campus_wizard.globals.general_functions.GeneralFunctions;
 
 
 public class Register extends AppCompatActivity {

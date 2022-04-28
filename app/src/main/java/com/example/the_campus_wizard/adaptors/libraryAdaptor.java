@@ -1,5 +1,7 @@
 package com.example.the_campus_wizard.adaptors;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -17,8 +19,6 @@ import com.example.the_campus_wizard.globals.general_functions.Intents;
 import com.example.the_campus_wizard.holderClasses.LibraryBook;
 
 import java.util.ArrayList;
-
-import static androidx.core.content.ContextCompat.startActivity;
 
 public class libraryAdaptor extends RecyclerView.Adapter<libraryAdaptor.LibraryViewHolder> {
 

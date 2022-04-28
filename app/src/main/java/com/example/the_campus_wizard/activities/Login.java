@@ -17,7 +17,6 @@ import com.example.the_campus_wizard.globals.app_data_stores.AppSession;
 import com.example.the_campus_wizard.globals.general_functions.Intents;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 

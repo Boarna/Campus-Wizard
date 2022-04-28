@@ -1,10 +1,8 @@
 package com.example.the_campus_wizard.activities;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,10 +20,9 @@ public class StudentDashboard extends AppCompatActivity {
     private Button forum;
     private TextView dtextview;
     private Button modules;
-    private ImageView dashboardBackBtn;
     private Button studentActivities;
     private Button academicProfile;
-    private ImageView profileBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +39,16 @@ public class StudentDashboard extends AppCompatActivity {
         String first_name = "";
 
         try {
-             first_name = Objects.requireNonNull(AppSession.Session.userData.get("first_name")).toString();
+            first_name = Objects.requireNonNull(AppSession.Session.userData.get("first_name")).toString();
 
-        }catch(Exception e){
+        } catch (Exception e) {
 
         }
 
         dtextview.setText("Welcome " + first_name);
 
 
-        Intent TimetableIntent =   Intents.timetableIntent(this);
+        Intent TimetableIntent = Intents.timetableIntent(this);
         Intent LibraryIntent = Intents.libraryIntent(this);
         Intent ForumIntent = Intents.forumIntent(this);
         Intent ModulesIntent = Intents.modulesIntent(this);
@@ -60,7 +57,7 @@ public class StudentDashboard extends AppCompatActivity {
 
 
         timetable.setOnClickListener(v -> {
-           startActivity(TimetableIntent);
+            startActivity(TimetableIntent);
         });
 
         modules.setOnClickListener(v -> {
@@ -83,7 +80,6 @@ public class StudentDashboard extends AppCompatActivity {
         studentActivities.setOnClickListener(v -> {
             startActivity(StudentActivitiesIntent);
         });
-
 
 
     }

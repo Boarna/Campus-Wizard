@@ -24,7 +24,6 @@ import com.example.the_campus_wizard.holderClasses.Review;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -85,7 +84,7 @@ public class LBookReview extends AppCompatActivity {
             first_name = AppSession.Session.userData.get("first_name").toString();
             surname = AppSession.Session.userData.get("surname").toString();
 
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
 

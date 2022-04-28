@@ -26,7 +26,7 @@ public class Modules extends AppCompatActivity {
         Intent ModulesIntent = Intents.CyberIntent(this);
 
         modulesGoCyberBtn.setOnClickListener(v -> {
-                startActivity(ModulesIntent);
+            startActivity(ModulesIntent);
         });
 
 

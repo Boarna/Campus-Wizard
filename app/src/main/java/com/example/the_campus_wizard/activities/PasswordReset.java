@@ -48,10 +48,10 @@ public class PasswordReset extends AppCompatActivity {
 
         try {
             mAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener(task -> {
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     Toast.makeText(this, "Reset link has been sent.", Toast.LENGTH_LONG).show();
                     finish();
-                }else {
+                } else {
                     Toast.makeText(this, "An error ocurred, please try again.", Toast.LENGTH_LONG).show();
                 }
             });

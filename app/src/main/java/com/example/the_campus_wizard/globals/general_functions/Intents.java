@@ -6,7 +6,6 @@ import android.content.Intent;
 
 import com.example.the_campus_wizard.activities.Cyber;
 import com.example.the_campus_wizard.activities.Forum;
-import com.example.the_campus_wizard.activities.ForumDiscussionSubjects;
 import com.example.the_campus_wizard.activities.Library;
 import com.example.the_campus_wizard.activities.Login;
 import com.example.the_campus_wizard.activities.Modules;
@@ -52,17 +51,10 @@ public class Intents {
     }
 
 
-    public static Intent forumSubmenuIntent(Context context) {
-        return new Intent(context, ForumDiscussionSubjects.class);
-    }
-
     public static Intent lBookRIntent(Context context) {
         return new Intent(context, com.example.the_campus_wizard.activities.LBookReview.class);
     }
 
-    public static Intent mainMenuIntent(Context context) {
-        return new Intent(context, com.example.the_campus_wizard.activities.MainActivity.class);
-    }
 
     public static Intent forgotPasswordIntent(Context context) {
         return new Intent(context, com.example.the_campus_wizard.activities.PasswordReset.class);
@@ -85,15 +77,6 @@ public class Intents {
 
     public static Intent forumTopicIntent(Context context) {
         return new Intent(context, com.example.the_campus_wizard.activities.ForumTopic.class);
-    }
-
-
-    public static Intent userProfileIntent(Context context) {
-        return new Intent(context, com.example.the_campus_wizard.activities.UserProfile.class);
-    }
-
-    public static Intent chatDashboardIntent(Context context){
-        return new Intent(context, com.example.the_campus_wizard.activities.ChatDashboard.class);
     }
 
 

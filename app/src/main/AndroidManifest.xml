@@ -15,7 +15,6 @@
         <activity
             android:name=".activities.AcademicProfile"
             android:exported="false" />
-        <activity android:name=".activities.StudentLife" />
         <activity android:name=".activities.PasswordReset" />
         <activity android:name=".activities.LBookReview" />
         <activity android:name=".activities.ForumDiscussionSubjects" />
@@ -28,7 +27,6 @@
         <activity android:name=".activities.Cyber" />
         <activity android:name=".activities.Login" />
         <activity android:name=".activities.StudentDashboard" />
-        <activity android:name=".activities.UserProfile" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

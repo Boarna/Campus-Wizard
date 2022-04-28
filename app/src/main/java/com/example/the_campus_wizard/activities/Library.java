@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -110,7 +109,7 @@ public class Library extends AppCompatActivity {
     private void processListWithFilter(String search) {
 
         books_list.clear();
-         radio_category = "Computing";
+        radio_category = "Computing";
         //Radio buttons checking
         if (computing.isChecked()) {
             radio_category = "Computing";
@@ -151,7 +150,6 @@ public class Library extends AppCompatActivity {
                     }
 
 
-
                     try {
                         //Attempts retrieve books reserved by the user or unreserved books. If user is not the person that reserved the book it will not be shown in the list.
                         if (Objects.requireNonNull(result.get("reservedName")).toString().equals(user_name) || Objects.requireNonNull(result.get("isReserved")).toString().equals("false")) {
@@ -172,7 +170,7 @@ public class Library extends AppCompatActivity {
 
                                 try {
                                     storageRef = FirebaseStorage.getInstance().getReference().child("books/" + image + ".jpg");
-                                }catch (Exception e){
+                                } catch (Exception e) {
 
                                 }
 
